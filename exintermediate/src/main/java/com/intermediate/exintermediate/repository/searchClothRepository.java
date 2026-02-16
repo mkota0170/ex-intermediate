@@ -20,6 +20,12 @@ public class searchClothRepository {
 
     private static final RowMapper<searchCloth> SEARCHCLOTH_ROW_MAPPER = new BeanPropertyRowMapper<>(searchCloth.class);
 
+    /**
+     * 選択された性別と色に応じた情報を抽出するメソッド
+     * @param gender
+     * @param color
+     * @return 条件に応じた衣類の検索結果
+     */
     public List<searchCloth> searchByColorAndGender(Integer gender, String color) {
         
         String sql = "SELECT genre,size,price FROM clothes WHERE gender=:gender AND color=:color";

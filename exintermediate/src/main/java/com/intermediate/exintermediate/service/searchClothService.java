@@ -16,6 +16,12 @@ public class searchClothService {
     @Autowired
     private searchClothRepository repository;
 
+    /**
+     * repositoryクラスのsearchByColorAndGenderメソッドを返す
+     * @param gender
+     * @param color
+     * @return searchByColorAndGenderメソッド
+     */
     public List<searchCloth> searchByColorAndGender(Integer gender, String color) {
         return repository.searchByColorAndGender(gender, color);
     }

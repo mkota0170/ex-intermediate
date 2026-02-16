@@ -17,11 +17,23 @@ public class searchClothController {
     @Autowired
     private searchClothService service;
 
+    /**
+     * 情報選択画面に遷移するメソッド
+     * @param model
+     * @return
+     */
     @RequestMapping("")
     public String index(Model model){
         return "inputClothDate";
     }
 
+    /**
+     * SQLの実行結果をスコープへ保存し結果を返すメソッド
+     * @param gender
+     * @param color
+     * @param model
+     * @return 引数の条件に一致する検索結果
+     */
     @RequestMapping("/searchCloth")
     private String searchByColorAndGender(Integer gender, String color,Model model){
         List<searchCloth> clothList = service.searchByColorAndGender(gender, color);

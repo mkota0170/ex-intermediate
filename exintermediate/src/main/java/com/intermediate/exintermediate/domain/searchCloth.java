@@ -1,12 +1,19 @@
 package com.intermediate.exintermediate.domain;
 
 public class searchCloth {
+    //id
     private Integer id;
+    //カテゴリー
     private String category;
+    //ジャンル
     private String genre;
+    //性別
     private Integer gender;
+    //色
     private String color;
+    //値段
     private Integer price;
+    //サイズ
     private String size;
 
     public Integer getId() {
