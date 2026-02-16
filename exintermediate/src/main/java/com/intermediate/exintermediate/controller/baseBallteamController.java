@@ -23,7 +23,6 @@ public class baseBallteamController {
         List<baseballTeam> list =  service.showList();
         model.addAttribute("nameList",list);
         return "selectTeam";
-
     }
 
     @RequestMapping("/move")
@@ -31,10 +30,5 @@ public class baseBallteamController {
         baseballTeam baseballTeam = service.showDetail(teamName);
         model.addAttribute("detail", baseballTeam);
         return "detail";
-    }
-
-    @RequestMapping("/returnPage")
-    public String returnPage(){
-        return "selectTeam";
     }
 }
