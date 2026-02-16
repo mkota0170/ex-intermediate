@@ -18,6 +18,11 @@ public class baseBallteamController {
     @Autowired
     private baseballTeamService service;
 
+    /**
+     * チーム一覧選択画面への移動
+     * @param model
+     * @return 選択画面への移動
+     */
     @RequestMapping("")
     public String showDetails(Model model){
         List<baseballTeam> list =  service.showList();
@@ -25,6 +30,12 @@ public class baseBallteamController {
         return "selectTeam";
     }
 
+    /**
+     * 選択したチームの詳細情報を表示する画面へ遷移するメソッド
+     * @param teamName
+     * @param model
+     * @return 選択したチームの詳細情報が記載されたページへ遷移
+     */
     @RequestMapping("/move")
     public String movePage(@RequestParam("teamName") String teamName,Model model){
         baseballTeam baseballTeam = service.showDetail(teamName);

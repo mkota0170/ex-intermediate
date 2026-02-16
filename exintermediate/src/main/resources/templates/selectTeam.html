@@ -10,7 +10,6 @@
     <div th:each="name : ${nameList}">
         <a th:href="@{/ex-intermediate/move(teamName=${name.teamName})}">
         <span th:text="${name.teamName}"></span></a>
-        
     </div>
     
 </body>

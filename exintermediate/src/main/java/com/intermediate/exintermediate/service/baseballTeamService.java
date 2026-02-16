@@ -16,9 +16,18 @@ public class baseballTeamService {
     @Autowired
     private baseballTeamRepository repository;
     
+    /**
+     * リポジトリのshowList()メソッドの呼び出し
+     * @return showList()メソッド
+     */
     public List<baseballTeam> showList(){
         return repository.showList();
     }
+    /**
+     * リポジトリのshowDetail()メソッドの呼び出し
+     * @param teamName
+     * @return showDetail()メソッド
+     */
     public baseballTeam showDetail(String teamName){
         return repository.showDetail(teamName);
     }
