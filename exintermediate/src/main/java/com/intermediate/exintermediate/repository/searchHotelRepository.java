@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import com.intermediate.exintermediate.domain.searchHotel;
@@ -33,8 +35,16 @@ public class searchHotelRepository {
      * @return 条件に一致するホテルの全情報
      */
     public List<searchHotel> searchByLessThanPrice(Integer price){
-        String sql = "SELECT hotel_name,nearest_station,price FROM hotels WHERE price=:price";
-        return null;
+        String sql;
+        if(price == null){
+            sql = "SELECT hotel_name,nearest_station,price FROM hotels ORDER BY price";
+        } else {
+            sql = "SELECT hotel_name,nearest_station,price FROM hotels WHERE price<=:price ORDER BY price";
+        }
+        SqlParameterSource param = new MapSqlParameterSource().addValue("price", price);
+
+        List<searchHotel> hotelList = template.query(sql, param, SEARCHHOTEL_ROW_MAPPER);
+        return hotelList;
     }
     
 }

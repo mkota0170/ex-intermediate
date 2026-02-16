@@ -16,6 +16,11 @@ public class searchHotelService {
     @Autowired
     private searchHotelRepository repository;
 
+    /**
+     * repositoryのsearchByLessThanPriceメソッドの呼び出し
+     * @param price
+     * @return searchByLessThanPriceメソッド
+     */
     public List<searchHotel> searchByLessThanPrice(Integer price){
         return repository.searchByLessThanPrice(price);
     }
