@@ -13,7 +13,7 @@ import com.intermediate.exintermediate.service.baseballTeamService;
 
 @Controller
 @RequestMapping("/ex-intermediate")
-public class baseBallteamController {
+public class baseballTeamController {
     
     @Autowired
     private baseballTeamService service;
