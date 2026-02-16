@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>詳細ページ</h1><br>
+    <strong>球団名</strong><br>
+    <span th:text="${detail.teamName}"></span><br>
+    <strong>リーグ名</strong><br>
+    <span th:text="${detail.leagueName}"></span><br>
+    <strong>本拠地</strong><br>
+    <span th:text="${detail.headQuarters}"></span><br>
+    <strong>発足</strong><br>
+    <span th:text="${detail.inauguration}"></span><br>
+    <strong>歴史</strong><br>
+    <span th:utext="${#strings.replace(detail.history,'↓','<br/>↓<br/>')}"></span><br>
+
+    <a href="selectTeam.html" th:href="@{/ex-intermediate}"><button>戻る</button></a>
+</body>
+</html>
